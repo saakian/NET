@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+
 import './App.css';
+import oneComp from './one_comp'
+import twoComp from './two_comp'
+import {BrowserRouter as Router , Switch, Route} from 'react-router-dom'
 
 function App() {
+  
   return (
+    
+    <Router>
+      <Switch>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>FUCKTHIS</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          youwillseeMEYEEEAH
-        </a>
-      </header>
+      <Route path="/" exact component={oneComp}/>
+      <Route path="/two" component ={twoComp}/>
     </div>
+    </Switch>
+    </Router>
+   
   );
+  
 }
 
 export default App;
